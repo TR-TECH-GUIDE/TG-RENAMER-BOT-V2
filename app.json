@@ -1,0 +1,74 @@
+{
+  "name": "TG Rename V2 Bot",
+  "description": "Telegram's best Open Source Rename Bot. Create your Fork now.",
+  "keywords": [
+    "telegram",
+    "best",
+    "open",
+    "source",
+    "Rename"
+  ],
+  "success_url": "https://telegram.dog/renametrv2bot",
+  "website": "https://trtechguide.wordpress.com",
+  "repository": "https://github.com/TR-TECH-GUIDE/TG-Rename-Bot-V2",
+  "logo": "https://telegra.ph/file/db247dadbf6c93ae12cf0.jpg",
+  "env": {
+    "WEBHOOK": {
+      "description": "Setting this to ANYTHING will enable webhooks when in env mode",
+      "value": "ANYTHING"
+    },
+    "TG_BOT_TOKEN": {
+      "description": "Your bot token, as a string.",
+      "value": ""
+    },
+    "USER_NAME": {
+      "description": "Your user name like @TharukRenuja",
+      "value": "@TharukRenuja"
+    },
+    "CHAT_BASE_TOKEN": {
+      "description": "Your chat base token, as a string.",
+      "value": ""
+    },
+    "APP_ID": {
+      "description": "Get this value from https://my.telegram.org",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "Get this value from https://my.telegram.org",
+      "value": ""
+    },
+    "AUTH_USERS": {
+      "description": "allow only pre-defined users to use this bot",
+      "value": "1202064253"
+    },
+    "BANNED_USERS": {
+      "description": "Banned Unwanted members..",
+      "value": "",
+      "required": false
+    },
+    "CHUNK_SIZE": {
+      "description": "chunk size that should be used with requests",
+      "value": "128",
+      "required": false
+    }
+  },
+  "addons": [
+    {
+    "plan": "heroku-postgresql",
+      "options": {
+        "version": "12"
+      }
+    }
+  ],
+  "buildpacks": [{
+    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+  }, {
+    "url": "heroku/python"
+  }],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
